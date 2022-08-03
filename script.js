@@ -1,38 +1,40 @@
 
-apple = `🍎`;
-applePrice = 10;
-appleCount = 3;
-appleSalePercent = 7;
+const apple = `🍎`,
+      applePrice = 10,
+      appleCount = 3,
+      appleSalePercent = 7;
 
 const appleResultPercent = applePrice / 100 * appleSalePercent;
 const appleFinalPrice = applePrice * appleCount - appleResultPercent * appleCount;
 
-orange = `🍊`;
-orangePrice = 12;
-orangeCount = 2;
-orangeSalePercent = 3;
+const orange = `🍊`,
+      orangePrice = 12,
+      orangeCount = 2,
+      orangeSalePercent = 3;
 
 const orangeResultPercent = orangePrice / 100 * orangeSalePercent;
 const orangeFinalPrice = orangePrice * orangeCount - orangeResultPercent * orangeCount;
 
-kiwi = `🥝`;
-kiwiPrice = 15;
-kiwiCount = 10;
-kiwiCountryPercent = 10;
+const kiwi = `🥝`,
+      kiwiPrice = 15,
+      kiwiCount = 10,
+      kiwiCountryPercent = 10;
 
 const kiwiResultPercent = kiwiPrice / 100 * kiwiCountryPercent;
 const kiwiFinalPrice = kiwiPrice * kiwiCount + kiwiResultPercent * kiwiCount;
 
 
-const day = new Date().getDate();
-const month = new Date().getMonth();
-const year = new Date().getFullYear();
+let date = new Date(),
+    day = date.getDate(),
+    month = date.getMonth(),
+    year = date.getFullYear();
 
 
-let captionString = `Food prices ≠ ${day}.${month + 1}.${year}`;
+let captionString = `Food prices ≠ ${day}.${++month}.${year}`.replace(`≠`,`-`);
+    // captionString = captionString.replace(`≠`,`-`);
 
 
-console.log(captionString.replace(`≠`,`-`));
+console.log(captionString);
 
 console.log(`Final price for ${appleCount} ${apple} = ${appleFinalPrice} UAH`);
 console.log(`Final price for ${orangeCount} ${orange} = ${orangeFinalPrice} UAH`);
